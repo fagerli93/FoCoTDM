@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/RakGuy/Desktop/FocoTDM/ftdmMain/main/pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\RakGuy\Desktop\FocoTDM\ftdmMain\ftdmDevs\Developer\RakGuy\TestFiles\sshp_opwsfuncs.pwn">
+	<assembly>
+		<name>sshp_opwsfuncs.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+		<member name="C:false" value="0">
+			<tagname value="bool"/>
+			<referrer name="CheckNoSpread"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckNoSpread"/>
+			<referrer name="CheckRapidFire"/>
+			<referrer name="CheckKnifeBug"/>
+			<referrer name="CheckDeathAndAdmin"/>
+		</member>
+
+		<!-- variables -->
+
+		<!-- functions -->
+		<member name="M:ABanPlayer" syntax="ABanPlayer()">
+			<stacksize value="1"/>
+			<referrer name="CheckCrasher"/>
+		</member>
+		<member name="M:AKickPlayer" syntax="AKickPlayer()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:AdminLog" syntax="AdminLog()">
+			<stacksize value="1"/>
+			<referrer name="CheckCrasher"/>
+		</member>
+		<member name="M:AdminsOnline" syntax="AdminsOnline()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:AntiCheatMessage" syntax="AntiCheatMessage()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckPoorAim"/>
+			<referrer name="CheckNoSpread"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:CheatLog" syntax="CheatLog()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckPoorAim"/>
+			<referrer name="CheckNoSpread"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:CheckCrasher" syntax="CheckCrasher(playerid, weaponid, hittype, hitid, fX, fY, fZ)">
+			<attribute name="public"/>
+			<stacksize value="167"/>
+			<dependency name="ABanPlayer"/>
+			<dependency name="AdminLog"/>
+			<dependency name="PlayerName"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="hittype">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="fX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:CheckDeathAndAdmin" syntax="CheckDeathAndAdmin(playerid, hitid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="IgnoredBullet"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="hitid">
+			</param>
+		</member>
+		<member name="M:CheckKnifeBug" syntax="CheckKnifeBug(playerid, hitid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="IgnoredBullet"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="hitid">
+			</param>
+		</member>
+		<member name="M:CheckNoSpread" syntax="CheckNoSpread(playerid, weaponid, hittype, hitid, fX, fY, fZ)">
+			<attribute name="public"/>
+			<stacksize value="18"/>
+			<dependency name="AntiCheatMessage"/>
+			<dependency name="CheatLog"/>
+			<dependency name="GetBXYZInFrontOfPlayer"/>
+			<dependency name="GetDistance"/>
+			<dependency name="GetDistanceBetweenVectors"/>
+			<dependency name="GetPlayerLastShotVectors"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="gettime"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="hittype">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="fX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:CheckPoorAim" syntax="CheckPoorAim(playerid, weaponid, hittype, hitid, fX, fY, fZ)">
+			<attribute name="public"/>
+			<stacksize value="18"/>
+			<dependency name="AntiCheatMessage"/>
+			<dependency name="CheatLog"/>
+			<dependency name="GetDistanceBetweenVectors"/>
+			<dependency name="GetPlayerDistanceFromPoint"/>
+			<dependency name="GetPlayerLastShotVectors"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="GetPlayerSurfingVehicleID"/>
+			<dependency name="IsPlayerInAnyVehicle"/>
+			<dependency name="PlayerName"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="hittype">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="fX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:CheckRapidFire" syntax="CheckRapidFire(playerid, weaponid, hittype, hitid, fX, fY, fZ)">
+			<attribute name="public"/>
+			<stacksize value="8"/>
+			<dependency name="AKickPlayer"/>
+			<dependency name="AdminsOnline"/>
+			<dependency name="AntiCheatMessage"/>
+			<dependency name="CheatLog"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="IsFastWeapon"/>
+			<dependency name="LastSessionAverage"/>
+			<dependency name="NetStats_GetConnectedTime"/>
+			<dependency name="PlayerName"/>
+			<dependency name="RapidFire_IsReloadable"/>
+			<dependency name="TAdminsOnline"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="hittype">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="fX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:CheckSilentAim" syntax="CheckSilentAim(playerid, weaponid, hittype, hitid, fX, fY, fZ)">
+			<attribute name="public"/>
+			<stacksize value="16"/>
+			<dependency name="AntiCheatMessage"/>
+			<dependency name="CheatLog"/>
+			<dependency name="GetPlayerLastShotVectors"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="floatabs"/>
+			<dependency name="format"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="hittype">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="fX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:GetBXYZInFrontOfPlayer" syntax="GetBXYZInFrontOfPlayer()">
+			<stacksize value="1"/>
+			<referrer name="CheckNoSpread"/>
+		</member>
+		<member name="M:GetDistance" syntax="GetDistance()">
+			<stacksize value="1"/>
+			<referrer name="CheckNoSpread"/>
+		</member>
+		<member name="M:GetDistanceBetweenVectors" syntax="GetDistanceBetweenVectors()">
+			<stacksize value="1"/>
+			<referrer name="CheckPoorAim"/>
+			<referrer name="CheckNoSpread"/>
+		</member>
+		<member name="M:GetPlayerDistanceFromPoint" syntax="GetPlayerDistanceFromPoint()">
+			<stacksize value="1"/>
+			<referrer name="CheckPoorAim"/>
+		</member>
+		<member name="M:GetPlayerLastShotVectors" syntax="GetPlayerLastShotVectors()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckPoorAim"/>
+			<referrer name="CheckNoSpread"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckPoorAim"/>
+		</member>
+		<member name="M:GetPlayerSurfingVehicleID" syntax="GetPlayerSurfingVehicleID()">
+			<stacksize value="1"/>
+			<referrer name="CheckPoorAim"/>
+		</member>
+		<member name="M:GetPlayerVehicleID" syntax="GetPlayerVehicleID()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:IgnoredBullet" syntax="IgnoredBullet()">
+			<stacksize value="1"/>
+			<referrer name="CheckKnifeBug"/>
+			<referrer name="CheckDeathAndAdmin"/>
+		</member>
+		<member name="M:IsFastWeapon" syntax="IsFastWeapon()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+		</member>
+		<member name="M:IsPlayerInAnyVehicle" syntax="IsPlayerInAnyVehicle()">
+			<stacksize value="1"/>
+			<referrer name="CheckPoorAim"/>
+		</member>
+		<member name="M:LastSessionAverage" syntax="LastSessionAverage()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:NetStats_GetConnectedTime" syntax="NetStats_GetConnectedTime()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:PlayerName" syntax="PlayerName()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckPoorAim"/>
+			<referrer name="CheckNoSpread"/>
+			<referrer name="CheckRapidFire"/>
+			<referrer name="CheckCrasher"/>
+		</member>
+		<member name="M:RapidFire_IsReloadable" syntax="RapidFire_IsReloadable()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:SendAdminMessage" syntax="SendAdminMessage()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckNoSpread"/>
+		</member>
+		<member name="M:TAdminsOnline" syntax="TAdminsOnline()">
+			<stacksize value="1"/>
+			<referrer name="CheckRapidFire"/>
+		</member>
+		<member name="M:floatabs" syntax="floatabs()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="CheckSilentAim"/>
+			<referrer name="CheckPoorAim"/>
+			<referrer name="CheckNoSpread"/>
+			<referrer name="CheckRapidFire"/>
+			<referrer name="CheckCrasher"/>
+		</member>
+		<member name="M:gettime" syntax="gettime()">
+			<stacksize value="1"/>
+			<referrer name="CheckNoSpread"/>
+		</member>
+
+	</members>
+</doc>

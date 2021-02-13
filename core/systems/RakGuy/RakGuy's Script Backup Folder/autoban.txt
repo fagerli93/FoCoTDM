@@ -1,0 +1,38 @@
+N-ShotGun < 100
+S-ShotGun < 5
+C-ShotGun < 70
+Uzi < 5
+Mp5 < 5
+AK-47 < 50
+M4 < 40
+Tec < 20
+C-Sniper < 200
+N-Sniper < 200
+
+[06:27:03] [chat] [RakGuy_H]: ___________NO HACKS____________
+[06:29:43] [chat] [RakGuy_H]: Deagle : 690;
+[06:31:12] [chat] [RakGuy_H]: Colt 160
+[06:32:06] [chat] [RakGuy_H]: Silencer: 248
+[06:33:19] [chat] [RakGuy_H]: N-ShotGun - 1030
+[06:34:19] [chat] [RakGuy_H]: S-Shotgun - 300
+[06:35:08] [chat] [RakGuy_H]: C-ShotGun - 300
+[06:35:55] [chat] [RakGuy_H]: UZI - 110 - 28
+[06:36:39] [chat] [RakGuy_H]: MP-5 29 - 80
+[06:37:26] [chat] [RakGuy_H]: AK - 100
+[06:37:50] [chat] [RakGuy_H]: M4 - 100
+[06:38:56] [chat] [RakGuy_H]: Uzi  32 - 105
+[06:40:24] [chat] [RakGuy_H]: Country Rifle 1060
+[06:41:22] [chat] [RakGuy_H]: Sniper 1060
+[06:41:34] [chat] [RakGuy_H]: ________WITH HACK__________-
+[06:42:43] [chat] [RakGuy_H]: Deagle Common 510-
+[06:44:04] [chat] [RakGuy_H]: Colt Common 160-
+[06:45:09] [chat] [RakGuy_H]: Silencer 273-
+[06:45:49] [chat] [RakGuy_H]: N-ShotGun 905-
+[06:47:05] [chat] [RakGuy_H]: Common 235-
+[06:47:52] [chat] [RakGuy_H]: Common 240-
+[06:47:58] [chat] [RakGuy_H]: Common 240- for C-Shotgun
+[06:49:15] [chat] [RakGuy_H]: Common Below 120 @28
+[06:49:42] [chat] [RakGuy_H]: Common Below 85 @29
+[06:50:51] [chat] [RakGuy_H]: AK: Common below 100
+[06:51:29] [chat] [RakGuy_H]: M4 - Below 100
+[06:53:12] [chat] [RakGuy_H]: Sniper : 1060 but sticks

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/RakGuy/Desktop/FocoTDM/ftdmMain/main/pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\RakGuy\Desktop\FocoTDM\ftdmMain\ftdmDevs\Developer\RakGuy\TestFiles\sshp.pwn">
+	<assembly>
+		<name>sshp.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+		<member name="T:DamageWatchDet" value="3">
+			<tagname value="DamageWatchDet"/>
+			<member name="C:DW_PID" value="0">
+			</member>
+			<member name="C:DW_MEM_ID" value="1">
+			</member>
+			<member name="C:DW_Type" value="2">
+				<tagname value="bool"/>
+			</member>
+		</member>
+		<member name="T:ShotAtDetails" value="3">
+			<tagname value="ShotAtDetails"/>
+			<member name="C:SAD_Shooter" value="0">
+			</member>
+			<member name="C:SAD_Time" value="1">
+			</member>
+			<member name="C:SAD_Reason" value="2">
+			</member>
+		</member>
+
+		<!-- constants -->
+		<member name="C:SS_INVALIDSHOTWEAPON" value="16">
+			<referrer name="GetPlayerDamage"/>
+		</member>
+		<member name="C:SS_OUTOFRANGE" value="7">
+			<referrer name="GetPlayerDamage"/>
+		</member>
+		<member name="C:SS_UNKNOWN_SHOT" value="8">
+			<referrer name="GetPlayerDamage"/>
+		</member>
+		<member name="C:WEAPON_CAR_RAM" value="6">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:WEAPON_TYPE_BANNED" value="5">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:WEAPON_TYPE_BULLET" value="1">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:WEAPON_TYPE_FIRE" value="4">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:WEAPON_TYPE_HAND" value="3">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:WEAPON_TYPE_NULL" value="0">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:WEAPON_TYPE_RANGED" value="2">
+			<referrer name="GetTypeOfWeapon"/>
+		</member>
+		<member name="C:false" value="0">
+			<tagname value="bool"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="SS_PlayerDeath"/>
+			<referrer name="takendamage"/>
+		</member>
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="SS_PlayerDeath"/>
+			<referrer name="DamageMath"/>
+			<referrer name="givendamage"/>
+		</member>
+
+		<!-- variables -->
+		<member name="F:AdminWatchingDamage">
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="ClearWatchingVariables"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+		</member>
+		<member name="F:AntiDoubleDeath">
+			<tagname value="bool"/>
+		</member>
+		<member name="F:CarRamDelay">
+		</member>
+		<member name="F:DV_MSG">
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="ClearWatchingVariables"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+		</member>
+		<member name="F:IgnoredMessage">
+			<referrer name="IgnoredBullet"/>
+		</member>
+		<member name="F:KnifeBugged">
+			<tagname value="bool"/>
+			<referrer name="SS_PlayerDeath"/>
+		</member>
+		<member name="F:LastShotAtPlayer">
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="F:PlayerWatchedDamage">
+			<referrer name="ClearWatchingVariables"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+		</member>
+		<member name="F:Pos">
+			<tagname value="Float"/>
+		</member>
+		<member name="F:SS_DeadPlayer">
+			<tagname value="bool"/>
+			<referrer name="IsPlayerDead"/>
+			<referrer name="SS_PlayerDeath"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="F:VW">
+		</member>
+		<member name="F:WDamage_Amount">
+			<tagname value="Float"/>
+			<referrer name="GetPlayerDamage"/>
+		</member>
+		<member name="F:WDamage_IncPercentage">
+			<tagname value="Float"/>
+			<referrer name="GetPlayerDamage"/>
+		</member>
+		<member name="F:WDamage_Range">
+			<tagname value="Float"/>
+			<referrer name="Range_Check"/>
+		</member>
+
+		<!-- functions -->
+		<member name="M:AdminLvl" syntax="AdminLvl()">
+			<stacksize value="1"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="ClearWatchingVariables"/>
+		</member>
+		<member name="M:ApplyAnimation" syntax="ApplyAnimation()">
+			<stacksize value="1"/>
+			<referrer name="SS_PlayerDeath"/>
+		</member>
+		<member name="M:ClearWatchingVariables" syntax="ClearWatchingVariables(playerid)">
+			<stacksize value="9"/>
+			<referrer name="cleardamagevariables"/>
+			<dependency name="AdminLvl"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="DV_MSG"/>
+			<dependency name="DW_MEM_ID"/>
+			<dependency name="DW_PID"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerWatchedDamage"/>
+			<dependency name="PlayerWatchedDamage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:DamageMath" syntax="DamageMath(playerid, issuerid, amount, weaponid)">
+			<attribute name="public"/>
+			<stacksize value="12"/>
+			<dependency name="GetPlayerArmour"/>
+			<dependency name="GetPlayerHealth"/>
+			<dependency name="LastShotAtPlayer"/>
+			<dependency name="LastShotAtPlayer"/>
+			<dependency name="NetStats_GetConnectedTime"/>
+			<dependency name="PlayerPlaySound"/>
+			<dependency name="SAD_Reason"/>
+			<dependency name="SAD_Shooter"/>
+			<dependency name="SAD_Time"/>
+			<dependency name="SS_DeadPlayer"/>
+			<dependency name="SS_PlayerDeath"/>
+			<dependency name="SetPlayerArmour"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="ShowTextDrawDamage"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="issuerid">
+			</param>
+			<param name="amount">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="weaponid">
+			</param>
+		</member>
+		<member name="M:DebugMsg" syntax="DebugMsg()">
+			<stacksize value="1"/>
+			<referrer name="IgnoredBullet"/>
+		</member>
+		<member name="M:GetPVarInt" syntax="GetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="GetPlayerDamage"/>
+		</member>
+		<member name="M:GetPlayerArmour" syntax="GetPlayerArmour()">
+			<stacksize value="1"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:GetPlayerDamage" syntax="GetPlayerDamage(playerid, hitid, weaponid, &amp;Damage_Ttl)">
+			<stacksize value="10"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GetTypeOfWeapon"/>
+			<dependency name="IgnoredBullet"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="Range_Check"/>
+			<dependency name="SS_INVALIDSHOTWEAPON"/>
+			<dependency name="SS_OUTOFRANGE"/>
+			<dependency name="SS_UNKNOWN_SHOT"/>
+			<dependency name="WDamage_Amount"/>
+			<dependency name="WDamage_IncPercentage"/>
+			<param name="playerid">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="Damage_Ttl">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
+		<member name="M:GetPlayerDistanceFromPoint" syntax="GetPlayerDistanceFromPoint()">
+			<stacksize value="1"/>
+			<referrer name="Range_Check"/>
+		</member>
+		<member name="M:GetPlayerHealth" syntax="GetPlayerHealth()">
+			<stacksize value="1"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:GetPlayerName" syntax="GetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="IG_PlayerName"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos(playerid, Pos[], Pos[], Pos[])">
+			<stacksize value="1"/>
+			<referrer name="Range_Check"/>
+			<param name="playerid">
+			</param>
+			<param name="Pos">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="Pos">
+				<paraminfo> [1] </paraminfo>
+			</param>
+			<param name="Pos">
+				<paraminfo> [2] </paraminfo>
+			</param>
+		</member>
+		<member name="M:GetTypeOfWeapon" syntax="GetTypeOfWeapon(weaponid)">
+			<stacksize value="1"/>
+			<referrer name="GetPlayerDamage"/>
+			<dependency name="WEAPON_CAR_RAM"/>
+			<dependency name="WEAPON_TYPE_BANNED"/>
+			<dependency name="WEAPON_TYPE_BULLET"/>
+			<dependency name="WEAPON_TYPE_FIRE"/>
+			<dependency name="WEAPON_TYPE_HAND"/>
+			<dependency name="WEAPON_TYPE_NULL"/>
+			<dependency name="WEAPON_TYPE_RANGED"/>
+			<param name="weaponid">
+			</param>
+		</member>
+		<member name="M:IG_PlayerName" syntax="IG_PlayerName(playerid)">
+			<stacksize value="30"/>
+			<referrer name="IgnoredBullet"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="IG_PlayerName"/>
+			<dependency name="IsPlayerConnected"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:IgnoredBullet" syntax="IgnoredBullet(playerid, hitid, ignore_type)">
+			<stacksize value="520"/>
+			<referrer name="GetPlayerDamage"/>
+			<dependency name="DebugMsg"/>
+			<dependency name="IG_PlayerName"/>
+			<dependency name="IgnoredMessage"/>
+			<dependency name="TimeStamp"/>
+			<dependency name="fclose"/>
+			<dependency name="fopen"/>
+			<dependency name="format"/>
+			<dependency name="fwrite"/>
+			<param name="playerid">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="ignore_type">
+			</param>
+		</member>
+		<member name="M:IsAdmin" syntax="IsAdmin()">
+			<stacksize value="1"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+			<referrer name="cleardamagevariables"/>
+		</member>
+		<member name="M:IsFastWeapon" syntax="IsFastWeapon(weaponid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="weaponid">
+			</param>
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected()">
+			<stacksize value="1"/>
+			<referrer name="IG_PlayerName"/>
+			<referrer name="GetPlayerDamage"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+			<referrer name="cleardamagevariables"/>
+		</member>
+		<member name="M:IsPlayerDead" syntax="IsPlayerDead(playerid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<dependency name="SS_DeadPlayer"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:NetStats_GetConnectedTime" syntax="NetStats_GetConnectedTime()">
+			<stacksize value="1"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:PlayerName" syntax="PlayerName()">
+			<stacksize value="1"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="ClearWatchingVariables"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+		</member>
+		<member name="M:PlayerPlaySound" syntax="PlayerPlaySound()">
+			<stacksize value="1"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:Range_Check" syntax="Range_Check(playerid, hitid, weaponid, &amp;range)">
+			<stacksize value="10"/>
+			<referrer name="GetPlayerDamage"/>
+			<dependency name="GetPlayerDistanceFromPoint"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="WDamage_Range"/>
+			<param name="playerid">
+			</param>
+			<param name="hitid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="range">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
+		<member name="M:SS_PlayerDeath" syntax="SS_PlayerDeath(playerid, killerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="13"/>
+			<referrer name="DamageMath"/>
+			<dependency name="ApplyAnimation"/>
+			<dependency name="KnifeBugged"/>
+			<dependency name="SS_DeadPlayer"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="false"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="killerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage()">
+			<stacksize value="1"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="ClearWatchingVariables"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+			<referrer name="cleardamagevariables"/>
+		</member>
+		<member name="M:SendDamageMessageToWatchers" syntax="SendDamageMessageToWatchers(playerid, damagerid, damage, weaponid)">
+			<stacksize value="12"/>
+			<dependency name="AdminLvl"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="DV_MSG"/>
+			<dependency name="DW_PID"/>
+			<dependency name="DW_Type"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WeaponName"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="damagerid">
+			</param>
+			<param name="damage">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="weaponid">
+			</param>
+		</member>
+		<member name="M:SetPlayerArmour" syntax="SetPlayerArmour()">
+			<stacksize value="1"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:SetPlayerHealth" syntax="SetPlayerHealth()">
+			<stacksize value="1"/>
+			<referrer name="SS_PlayerDeath"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:SetPlayerPos" syntax="SetPlayerPos(playerid)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:SetPlayerVirtualWorld" syntax="SetPlayerVirtualWorld(playerid)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:ShowTextDrawDamage" syntax="ShowTextDrawDamage()">
+			<stacksize value="1"/>
+			<referrer name="DamageMath"/>
+		</member>
+		<member name="M:TimeStamp" syntax="TimeStamp()">
+			<stacksize value="1"/>
+			<referrer name="IgnoredBullet"/>
+		</member>
+		<member name="M:WeaponName" syntax="WeaponName()">
+			<stacksize value="1"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+		</member>
+		<member name="M:cleardamagevariables" syntax="cleardamagevariables(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="ClearWatchingVariables"/>
+			<dependency name="IsAdmin"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:fclose" syntax="fclose()">
+			<stacksize value="1"/>
+			<referrer name="IgnoredBullet"/>
+		</member>
+		<member name="M:fopen" syntax="fopen()">
+			<stacksize value="1"/>
+			<referrer name="IgnoredBullet"/>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="SendDamageMessageToWatchers"/>
+			<referrer name="ClearWatchingVariables"/>
+			<referrer name="IgnoredBullet"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+		</member>
+		<member name="M:fwrite" syntax="fwrite()">
+			<stacksize value="1"/>
+			<referrer name="IgnoredBullet"/>
+		</member>
+		<member name="M:givendamage" syntax="givendamage(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="DV_MSG"/>
+			<dependency name="DW_MEM_ID"/>
+			<dependency name="DW_PID"/>
+			<dependency name="DW_Type"/>
+			<dependency name="IsAdmin"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerWatchedDamage"/>
+			<dependency name="PlayerWatchedDamage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sscanf" syntax="sscanf()">
+			<stacksize value="1"/>
+			<referrer name="givendamage"/>
+			<referrer name="takendamage"/>
+			<referrer name="cleardamagevariables"/>
+		</member>
+		<member name="M:takendamage" syntax="takendamage(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="AdminWatchingDamage"/>
+			<dependency name="DV_MSG"/>
+			<dependency name="DW_MEM_ID"/>
+			<dependency name="DW_PID"/>
+			<dependency name="DW_Type"/>
+			<dependency name="IsAdmin"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerWatchedDamage"/>
+			<dependency name="PlayerWatchedDamage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+
+	</members>
+</doc>

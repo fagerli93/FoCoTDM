@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/RakGuy/Desktop/SAMP_Server/pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\RakGuy\Desktop\FocoTDM\ftdmLeadDevs\lead\core\systemvars.inc">
+	<assembly>
+		<name>systemvars.inc</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+		<member name="T:FoCo_Donation_Info" value="8">
+			<tagname value="FoCo_Donation_Info"/>
+			<member name="C:did" value="0">
+			</member>
+			<member name="C:dpid" value="1">
+			</member>
+			<member name="C:dbuy" value="2">
+			</member>
+			<member name="C:dexp" value="3">
+			</member>
+			<member name="C:dtype" value="4">
+			</member>
+			<member name="C:dcar1" value="5">
+			</member>
+			<member name="C:dcar2" value="6">
+			</member>
+			<member name="C:dcar3" value="7">
+			</member>
+		</member>
+		<member name="T:FoCo_PlayerStats_Info" value="25">
+			<tagname value="FoCo_PlayerStats_Info"/>
+			<member name="C:id" value="0">
+			</member>
+			<member name="C:headshots" value="1">
+			</member>
+			<member name="C:deaths" value="2">
+			</member>
+			<member name="C:kills" value="3">
+			</member>
+			<member name="C:heli" value="4">
+			</member>
+			<member name="C:streaks" value="5">
+			</member>
+			<member name="C:suicides" value="6">
+			</member>
+			<member name="C:helpups" value="7">
+			</member>
+			<member name="C:deagle" value="8">
+			</member>
+			<member name="C:m4" value="9">
+			</member>
+			<member name="C:mp5" value="10">
+			</member>
+			<member name="C:knife" value="11">
+			</member>
+			<member name="C:rpg" value="12">
+			</member>
+			<member name="C:flamethrower" value="13">
+			</member>
+			<member name="C:chainsaw" value="14">
+			</member>
+			<member name="C:grenade" value="15">
+			</member>
+			<member name="C:colt" value="16">
+			</member>
+			<member name="C:uzi" value="17">
+			</member>
+			<member name="C:combatshotgun" value="18">
+			</member>
+			<member name="C:smg" value="19">
+			</member>
+			<member name="C:ak47" value="20">
+			</member>
+			<member name="C:tec9" value="21">
+			</member>
+			<member name="C:sniper" value="22">
+			</member>
+			<member name="C:cpgs_captured" value="23">
+			</member>
+			<member name="C:assists" value="24">
+			</member>
+		</member>
+		<member name="T:FoCo_Player_Info" value="492">
+			<tagname value="FoCo_Player_Info"/>
+			<member name="C:id" value="0">
+			</member>
+			<member name="C:level" value="1">
+			</member>
+			<member name="C:admin" value="2">
+			</member>
+			<member name="C:cash" value="3">
+			</member>
+			<member name="C:score" value="4">
+			</member>
+			<member name="C:banned" value="5">
+			</member>
+			<member name="C:registered" value="6">
+			</member>
+			<member name="C:skin" value="7">
+			</member>
+			<member name="C:username" value="8">
+				<size value="30"/>
+			</member>
+			<member name="C:user_password" value="38">
+				<size value="128"/>
+			</member>
+			<member name="C:clan" value="166">
+			</member>
+			<member name="C:clanrank" value="167">
+			</member>
+			<member name="C:tester" value="168">
+			</member>
+			<member name="C:jailed" value="169">
+			</member>
+			<member name="C:onlinetime" value="170">
+			</member>
+			<member name="C:admintime" value="171">
+			</member>
+			<member name="C:reports" value="172">
+			</member>
+			<member name="C:admin_kicks" value="173">
+			</member>
+			<member name="C:admin_jails" value="174">
+			</member>
+			<member name="C:admin_bans" value="175">
+			</member>
+			<member name="C:admin_warns" value="176">
+			</member>
+			<member name="C:users_carid" value="177">
+			</member>
+			<member name="C:email" value="178">
+				<size value="80"/>
+			</member>
+			<member name="C:warns" value="258">
+			</member>
+			<member name="C:tempban" value="259">
+			</member>
+			<member name="C:donation" value="260">
+			</member>
+			<member name="C:nchanges" value="261">
+			</member>
+			<member name="C:online" value="262">
+			</member>
+			<member name="C:public_profile" value="263">
+			</member>
+			<member name="C:register_date" value="264">
+				<size value="20"/>
+			</member>
+			<member name="C:lifetime_donator" value="284">
+			</member>
+			<member name="C:last_namechange" value="285">
+			</member>
+			<member name="C:cmt" value="286">
+			</member>
+			<member name="C:staff_management" value="287">
+			</member>
+			<member name="C:dev" value="288">
+			</member>
+			<member name="C:duels_won" value="289">
+			</member>
+			<member name="C:duels_lost" value="290">
+			</member>
+			<member name="C:duels_total" value="291">
+			</member>
+			<member name="C:trusted" value="292">
+			</member>
+			<member name="C:failed_logins_ucp" value="293">
+			</member>
+			<member name="C:saltfix" value="294">
+				<size value="128"/>
+			</member>
+			<member name="C:clan_name" value="422">
+				<size value="50"/>
+			</member>
+			<member name="C:clan_rank_name" value="472">
+				<size value="20"/>
+			</member>
+		</member>
+		<member name="T:FoCo_Vehicle_Info" value="39">
+			<tagname value="FoCo_Vehicle_Info"/>
+			<member name="C:cid" value="0">
+			</member>
+			<member name="C:cmodel" value="1">
+			</member>
+			<member name="C:cx" value="2">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:cy" value="3">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:cz" value="4">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:cangle" value="5">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:ccol1" value="6">
+			</member>
+			<member name="C:ccol2" value="7">
+			</member>
+			<member name="C:cplate" value="8">
+				<size value="25"/>
+			</member>
+			<member name="C:coname" value="33">
+				<size value="0"/>
+			</member>
+			<member name="C:coid" value="33">
+			</member>
+			<member name="C:clocked" value="34">
+			</member>
+			<member name="C:cvw" value="35">
+			</member>
+			<member name="C:cint" value="36">
+			</member>
+			<member name="C:special_mod" value="37">
+			</member>
+			<member name="C:v_type" value="38">
+			</member>
+		</member>
+		<member name="T:sql_db_info" value="3">
+			<tagname value="sql_db_info"/>
+			<member name="C:sql_pstats" value="0">
+				<tagname value="bool"/>
+			</member>
+			<member name="C:sql_achievements" value="1">
+				<tagname value="bool"/>
+			</member>
+			<member name="C:sql_data" value="2">
+				<tagname value="bool"/>
+			</member>
+		</member>
+
+		<!-- constants -->
+
+		<!-- variables -->
+		<member name="F:FoCo_Donations">
+		</member>
+		<member name="F:FoCo_Player">
+		</member>
+		<member name="F:FoCo_Player_UCP">
+		</member>
+		<member name="F:FoCo_Playerstats">
+		</member>
+		<member name="F:FoCo_Playerstats_UCP">
+		</member>
+		<member name="F:FoCo_Team">
+		</member>
+		<member name="F:FoCo_Vehicles">
+		</member>
+		<member name="F:FoCo_Vote">
+		</member>
+		<member name="F:FoCo_Vote_Answer1">
+		</member>
+		<member name="F:FoCo_Vote_Answer2">
+		</member>
+		<member name="F:FoCo_Vote_Answer3">
+		</member>
+		<member name="F:FoCo_Vote_Question">
+		</member>
+		<member name="F:FoCo_Vote_Response1">
+		</member>
+		<member name="F:FoCo_Vote_Response2">
+		</member>
+		<member name="F:FoCo_Vote_Response3">
+		</member>
+		<member name="F:OnlineTimer">
+		</member>
+		<member name="F:SQL_Loaded">
+		</member>
+		<member name="F:Spawned">
+		</member>
+		<member name="F:afkReason">
+		</member>
+		<member name="F:afkTimer">
+		</member>
+		<member name="F:afkX">
+			<tagname value="Float"/>
+		</member>
+		<member name="F:afkY">
+			<tagname value="Float"/>
+		</member>
+		<member name="F:afkZ">
+			<tagname value="Float"/>
+		</member>
+		<member name="F:gPlayerLogged">
+		</member>
+		<member name="F:ipstring">
+		</member>
+		<member name="F:justConnected">
+		</member>
+		<member name="F:lastHit">
+		</member>
+		<member name="F:passPass">
+		</member>
+
+		<!-- functions -->
+
+	</members>
+</doc>

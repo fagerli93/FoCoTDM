@@ -1,0 +1,88 @@
+-- MySQL dump 10.14  Distrib 5.5.28a-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: focotdm_game
+
+
+-- ------------------------------------------------------
+-- Server version	5.5.28a-MariaDB-a1~precise-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 *
+/;
+
+--
+-- Table structure for table `FoCo_Turfs`
+--
+
+DROP TABLE IF EXISTS `FoCo_Turfs`;
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+
+CREATE TABLE `FoCo_Turfs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `gz_name` varchar(40) DEFAULT NULL,
+  `gz_pickup_x` float DEFAULT NULL,
+  `gz_pickup_y` float DEFAULT NULL,
+  `gz_pickup_z` float DEFAULT NULL,
+  `gz_pickup_world` int(11) DEFAULT NULL,
+  `gz_pickup_int` int(11) DEFAULT NULL,
+  `gz_pickup_model` int(11) DEFAULT NULL,
+  `gz_pickup_type` int(11) DEFAULT NULL,
+  `gz_min_x` float DEFAULT NULL,
+  `gz_min_y` float DEFAULT NULL,
+  `gz_max_x` float DEFAULT NULL,
+  `gz_max_y` float DEFAULT NULL,
+  `gz_perk` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client 
+
+*/;
+
+--
+-- Dumping data for table `FoCo_Turfs`
+--
+
+LOCK TABLES `FoCo_Turfs` WRITE;
+/*!40000 ALTER TABLE `FoCo_Turfs` DISABLE KEYS 
+
+*/;
+INSERT INTO `FoCo_Turfs` VALUES 
+
+(1,'Market',1129,-1488.96,22.769,0,0,1318,1,1076.98,-1560.04,1182.34,-1426.95,1),
+(2,'Idlewood Gas Station',1928.58,-1776.14,13.5469,0,0,1318,1,1897.53,-1816.21,1976.35,-1745.16,4),
+(3,'LSPD',1511.82,-1664.74,13.7969,0,0,1318,1,1434.46,-1727.2,1524.54,-1597.13,4),
+(4,'Ganton',2341.5,-1742.54,13.5469,0,0,1318,1,2198,-1772.47,2445.38,-1619.86,1),
+(5,'Grove street',2513.2,-1669.15,13.5175,0,0,1318,1,2448.87,-1764.09,2548.7,-1623.1,5),
+(6,'East LS',2571.08,-1345.39,36.7328,0,0,1318,1,2513.95,-1516.95,2642.73,-1227.14,4),
+(7,'Los Flores',2729.66,-1259.86,59.5699,0,0,1318,1,2639.88,-1506.72,2747.01,-1246.28,0),
+(8,'Las Colinas',2166.62,-1003.23,62.7973,0,0,1318,1,1979.2,-1086.41,2284.54,-982.976,0),
+(9,'Glen Park',1969.53,-1200.52,25.624,0,0,1318,1,1846.91,-1272.92,2073.55,-1128.56,0),
+(10,'Jefferson',2166.85,-1301.11,23.8203,0,0,1318,1,2062.05,-1386.47,2267.46,-1224.01,1);
+
+
+/*!40000 ALTER TABLE `FoCo_Turfs` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-06-26  2:06:29

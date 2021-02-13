@@ -1,0 +1,15 @@
+Places edited:>
+
+1. vista_anticheat.pwn
+	i. AntiCheat_GetPlayerHealth()
+	ii. AntiCheat_SetPlayerHealth()
+2. Callbacks.pwn
+	i. OnPlayerWeaponShot()
+	ii.OnPlayerGiveDamage()
+	iii.OnPlayerTakeDamage()
+	iv. OnPlayerUpdate()
+	v. OnPlayerConnect()
+	vi. OnPlayerDisconnect()
+3. RakGuy_testfiles.pwn
+	i. Uncomment Lines
+4.
