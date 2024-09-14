@@ -1,6 +1,6 @@
 # FoCoTDM
 
-This is the files for the SA-MP server FoCoTDM.
+These are the files for the SA-MP server FoCoTDM.
 
 The release has been made public by pEar in agreement with other parties that did their part to develop FoCoTDM.
 
